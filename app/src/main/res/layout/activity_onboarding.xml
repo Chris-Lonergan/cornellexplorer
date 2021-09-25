@@ -4,23 +4,27 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".StartScreenActivity">
-
-    <!--
-    Main activity layout file, has play button and bear logo
-    -->
+    tools:context=".OnboardingActivity">
 
     <Button
-        android:id="@+id/play"
+        android:id="@+id/tofragment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="158dp"
-        android:layout_marginTop="341dp"
-        android:layout_marginEnd="159dp"
-        android:layout_marginBottom="342dp"
-        android:text="play"
+        android:layout_marginStart="29dp"
+        android:layout_marginBottom="118dp"
+        android:text="start the game thing"
+        android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="51dp"
+        android:layout_marginTop="155dp"
+        android:text="onboarding screen yay"
+        android:textSize="70sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

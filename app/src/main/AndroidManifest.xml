@@ -10,10 +10,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Exploreapp">
         <activity
-            android:name=".MainActivity2"
+            android:name=".OnboardingActivity"
             android:exported="true" />
         <activity
-            android:name=".MainActivity"
+            android:name=".FragmentActivity"
+            android:exported="true" />
+        <activity
+            android:name=".MainFragmentActivity"
+            android:exported="true" />
+        <activity
+            android:name=".StartScreenActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
