@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import kotlin.random.Random
 
 class MainActivity2 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -15,5 +16,11 @@ class MainActivity2 : AppCompatActivity() {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
+
+    }
+
+    // function that returns name and tag of random activity
+    fun randomActivity(){
+        val id = Random.nextInt(0, ExplorerDatabase.totalActivities)
     }
 }
