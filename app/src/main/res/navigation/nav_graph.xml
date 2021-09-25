@@ -15,4 +15,9 @@
         android:name="com.example.exploreapp.MainFragment"
         android:label="main_fragment"
         tools:layout="@layout/main_fragment" />
+    <activity
+        android:id="@+id/onboardingActivity"
+        android:name="com.example.exploreapp.OnboardingActivity"
+        android:label="activity_onboarding"
+        tools:layout="@layout/activity_onboarding" />
 </navigation>
