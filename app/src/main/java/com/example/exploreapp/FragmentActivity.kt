@@ -1,12 +1,12 @@
 package com.example.exploreapp
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.example.exploreapp.fragments.MainFragment
 import com.example.exploreapp.fragments.secondFragment
 import com.example.exploreapp.fragments.thirdFragment
-import kotlinx.android.synthetic.main.activity_main.*
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class FragmentActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -18,13 +18,13 @@ class FragmentActivity : AppCompatActivity() {
         val thirdFragment= thirdFragment()
 
         setCurrentFragment(firstFragment)
+        val navView : BottomNavigationView = findViewById(R.id.bottom_nav_view)
 
-        bottomNavigationView.setOnNavigationItemSelectedListener {
-            when(it.itemId){
-                R.id.home->setCurrentFragment(firstFragment)
-                R.id.person->setCurrentFragment(secondFragment)
-                R.id.settings->setCurrentFragment(thirdFragment)
-
+        navView.setOnNavigationItemSelectedListener {
+            when (it.itemId) {
+                R.id.tab1 -> setCurrentFragment(firstFragment)
+                R.id.tab2 -> setCurrentFragment(secondFragment)
+                R.id.tab3 -> setCurrentFragment(thirdFragment)
             }
             true
         }
@@ -33,7 +33,7 @@ class FragmentActivity : AppCompatActivity() {
 
     private fun setCurrentFragment(fragment:Fragment)=
         supportFragmentManager.beginTransaction().apply {
-            replace(R.id.flFragment,fragment)
+            replace(R.id.fragment_container_view,fragment)
             commit()
         }
 
