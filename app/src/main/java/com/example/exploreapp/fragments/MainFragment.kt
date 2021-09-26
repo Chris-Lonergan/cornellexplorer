@@ -9,4 +9,5 @@ import com.example.exploreapp.R
 
 class MainFragment : Fragment(R.layout.main_fragment) {
 
+    fun generateActivity(activities : )
 }
