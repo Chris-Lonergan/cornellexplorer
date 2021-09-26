@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainActivity">
+
+    <activity
+        android:id="@+id/mainActivity"
+        android:name="com.example.exploreapp.StartScreenActivity"
+        android:label="activity_main"
+        tools:layout="@layout/activity_main" />
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.exploreapp.fragments.MainFragment"
+        android:label="main_fragment"
+        tools:layout="@layout/main_fragment" >
+        <action
+            android:id="@+id/action_mainFragment_to_thirdFragment"
+            app:destination="@id/thirdFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_secondFragment"
+            app:destination="@id/secondFragment" />
+    </fragment>
+    <activity
+        android:id="@+id/onboardingActivity"
+        android:name="com.example.exploreapp.OnboardingActivity"
+        android:label="activity_onboarding"
+        tools:layout="@layout/activity_onboarding" />
+    <fragment
+        android:id="@+id/secondFragment"
+        android:name="com.example.exploreapp.fragments.secondFragment"
+        android:label="fragment_second"
+        tools:layout="@layout/fragment_second" />
+    <fragment
+        android:id="@+id/thirdFragment"
+        android:name="com.example.exploreapp.fragments.thirdFragment"
+        android:label="fragment_third"
+        tools:layout="@layout/fragment_third" />
+    <activity
+        android:id="@+id/fragmentActivity"
+        android:name="com.example.exploreapp.FragmentActivity"
+        android:label="activity_fragment"
+        tools:layout="@layout/activity_fragment" />
+</navigation>
