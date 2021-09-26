@@ -35,11 +35,11 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        val db = ExplorerDatabase.getInstance(this)
-        db.explorerDao().createUser("rachel", 0, 0, emptyList(), emptyList())
-        db.explorerDao().createUser("chris", 0, 0, emptyList(), emptyList())
-        db.explorerDao().createUser("michelle", 0, 0, emptyList(), emptyList())
-        val data = db.explorerDao().getAllUsers().isEmpty()
+        val db = UserDatabase.getInstance(this)
+        db.userDao().createUser("rachel", 0, 0, emptyList(), emptyList())
+        db.userDao().createUser("chris", 0, 0, emptyList(), emptyList())
+        db.userDao().createUser("michelle", 0, 0, emptyList(), emptyList())
+        val data = db.userDao().getAllUsers().isEmpty()
 
         Log.d("LOOK HERE PLEASE", data.toString())
 
