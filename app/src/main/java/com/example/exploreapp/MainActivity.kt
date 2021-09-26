@@ -3,8 +3,10 @@ package com.example.exploreapp
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import kotlinx.coroutines.flow.forEach
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,5 +34,18 @@ class MainActivity : AppCompatActivity() {
                 else -> false
             }
         }
+
+        val db = ExplorerDatabase.getInstance(this)
+        db.explorerDao().createUser("rachel", 0, 0, emptyList(), emptyList())
+        db.explorerDao().createUser("chris", 0, 0, emptyList(), emptyList())
+        db.explorerDao().createUser("michelle", 0, 0, emptyList(), emptyList())
+        val data = db.explorerDao().getAllUsers().isEmpty()
+
+        Log.d("LOOK HERE PLEASE", data.toString())
+
+
+
+
+
     }
 }

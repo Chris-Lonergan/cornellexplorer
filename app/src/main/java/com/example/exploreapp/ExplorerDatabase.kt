@@ -9,7 +9,7 @@ import androidx.room.RoomDatabase
 public abstract class ExplorerDatabase : RoomDatabase() {
     abstract fun explorerDao() : ExplorerDao
 
-    companion object {
+    companion object Explorer {
         @Volatile
         private var INSTANCE : ExplorerDatabase? = null
 
@@ -26,9 +26,5 @@ public abstract class ExplorerDatabase : RoomDatabase() {
             }
         }
     }
-    val db = Room.databaseBuilder(applicationContext, ExplorerDatabase::class.java, "explorer-database").build()
-    val explorerDao = db.explorerDao()
-    val user : ExplorerEntities.User = explorerDao.getUserById(1)
-    val totalActivities : Int = explorerDao.getTotalActivities()
 
 }

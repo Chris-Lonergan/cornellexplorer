@@ -6,16 +6,16 @@ class ExplorerEntities {
 
     @Entity(tableName = "user_table")
     data class User(
-        @PrimaryKey val uid: Int,
+        @PrimaryKey(autoGenerate = true) val uid: Int,
         @ColumnInfo(name = "username") val username: String,
         @ColumnInfo(name = "level") val level: Int,
         @ColumnInfo(name = "experience") val exp: Int,
-        @ColumnInfo(name = "badges") val badges: String
+        @ColumnInfo(name = "badges") val badges: List<String>
     )
 
     @Entity(tableName = "activities_table")
-    data class Activities(
-        @PrimaryKey val aid : Int,
+    data class Activity(
+        @PrimaryKey(autoGenerate = true) val aid : Int,
         @ColumnInfo(name = "user_id") val user_id : Int,
         @ColumnInfo(name = "image") val image : String,
         @ColumnInfo(name = "location") val location : String,
@@ -33,7 +33,7 @@ class ExplorerEntities {
             parentColumn = "uid",
             entityColumn = "user_id"
         )
-        val activities : List<Activities>
+        val activities : List<Activity>
     )
 
 }
