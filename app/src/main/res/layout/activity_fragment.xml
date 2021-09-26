@@ -18,6 +18,10 @@
         android:id="@+id/bottom_nav_view"
         android:layout_width="410dp"
         android:layout_height="80dp"
+        app:itemIconSize="30dp"
+        app:itemIconTint="@color/gray"
+        app:itemRippleColor="@color/lightblue"
+        app:itemTextColor="@color/gray"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:menu="@menu/bottom_menu" />
